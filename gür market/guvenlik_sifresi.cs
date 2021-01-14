@@ -33,5 +33,23 @@ namespace gür_market
         {
 
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // guvenlik_sifresi
+            // 
+            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Name = "guvenlik_sifresi";
+            this.Load += new System.EventHandler(this.guvenlik_sifresi_Load_1);
+            this.ResumeLayout(false);
+
+        }
+
+        private void guvenlik_sifresi_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
