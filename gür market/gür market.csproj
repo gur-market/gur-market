@@ -244,11 +244,11 @@
     <Compile Include="veresiyeSatis.Designer.cs">
       <DependentUpon>veresiyeSatis.cs</DependentUpon>
     </Compile>
-    <Compile Include="yonetici_ekleme.cs">
+    <Compile Include="sifre_değisimi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="yonetici_ekleme.Designer.cs">
-      <DependentUpon>yonetici_ekleme.cs</DependentUpon>
+    <Compile Include="sifre_değisimi.Designer.cs">
+      <DependentUpon>sifre_değisimi.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="alacak_verecek.resx">
       <DependentUpon>alacak_verecek.cs</DependentUpon>
@@ -302,8 +302,8 @@
     <EmbeddedResource Include="veresiyeSatis.resx">
       <DependentUpon>veresiyeSatis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="yonetici_ekleme.resx">
-      <DependentUpon>yonetici_ekleme.cs</DependentUpon>
+    <EmbeddedResource Include="sifre_değisimi.resx">
+      <DependentUpon>sifre_değisimi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

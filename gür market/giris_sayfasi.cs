@@ -67,5 +67,12 @@ namespace gür_market
         {
 
         }
+
+        private void sifremi_unuttum_Click(object sender, EventArgs e)
+        {
+           sifre_değisimi sifre_değisimi = new sifre_değisimi();
+            this.Hide();
+            sifre_değisimi.ShowDialog();
+        }
     }
 }

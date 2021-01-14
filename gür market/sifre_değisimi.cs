@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace gür_market
 {
-    public partial class yonetici_ekleme : Form
+    public partial class sifre_değisimi : Form
     {
-        public yonetici_ekleme()
+        public sifre_değisimi()
         {
             InitializeComponent();
         }

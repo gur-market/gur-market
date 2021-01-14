@@ -25,7 +25,7 @@ namespace gür_market
 
         private void button5_Click(object sender, EventArgs e)
         {
-            yonetici_ekleme yonetici_ekleme = new yonetici_ekleme();
+            sifre_değisimi yonetici_ekleme = new sifre_değisimi();
             yonetici_ekleme.ShowDialog();
         }
 

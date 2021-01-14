@@ -1,7 +1,7 @@
 ﻿
 namespace gür_market
 {
-    partial class yonetici_ekleme
+    partial class sifre_değisimi
     {
         /// <summary>
         /// Required designer variable.
@@ -54,9 +54,9 @@ namespace gür_market
             this.label1.ForeColor = System.Drawing.Color.Yellow;
             this.label1.Location = new System.Drawing.Point(94, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(417, 44);
+            this.label1.Size = new System.Drawing.Size(433, 44);
             this.label1.TabIndex = 2;
-            this.label1.Text = "YÖNETİCİ EKLEME";
+            this.label1.Text = "ŞİFRE DEĞİŞTİRME";
             // 
             // button1
             // 
@@ -183,7 +183,7 @@ namespace gür_market
             this.label5.Text = "Yedek Şifre :";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // yonetici_ekleme
+            // sifre_değisimi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,7 +203,7 @@ namespace gür_market
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "yonetici_ekleme";
+            this.Name = "sifre_değisimi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "yonetici_ekleme";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
