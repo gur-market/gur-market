@@ -147,3 +147,24 @@ C:\Users\mertk\Source\Repos\gur-market\gür market\obj\Debug\gür market.csproj.
 C:\Users\mertk\Source\Repos\gur-market\gür market\obj\Debug\gür market.csproj.CopyComplete
 C:\Users\mertk\Source\Repos\gur-market\gür market\obj\Debug\gür market.exe
 C:\Users\mertk\Source\Repos\gur-market\gür market\obj\Debug\gür market.pdb
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür market.csprojAssemblyReference.cache
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.alacak_verecek.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.ana_sayfa.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.giris_sayfasi.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.guvenlik_sifresi.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.musteri_borc.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.musteri_borc_guncelleme.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.parasal_durum.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.pesinSatis.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.Properties.Resources.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.satis.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.tedarikci_borc.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.tedarik_sifre.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.urunAlis.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.urunStokları.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.veresiyeSatis.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür_market.yonetici_ekleme.resources
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür market.csproj.GenerateResource.cache
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür market.csproj.CoreCompileInputs.cache
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür market.exe
+C:\Users\asdf\Source\Repos\gur-market\gür market\obj\Debug\gür market.pdb
