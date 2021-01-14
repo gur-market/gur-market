@@ -51,7 +51,7 @@ namespace gür_market
 
         private void alacak_verecek_Load(object sender, EventArgs e)
         {
-            //deneme
+         //dfgdfgdfg
         }
     }
 }
