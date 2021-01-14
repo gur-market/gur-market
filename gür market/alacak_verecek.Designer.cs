@@ -2,7 +2,7 @@
 namespace gür_market
 {
     partial class alacak_verecek
-    {
+    {   ///umutdeneme
         /// <summary>
         /// Required designer variable.
         /// </summary>
