@@ -35,5 +35,23 @@ namespace gür_market
             this.Hide();
             tedarikci_borc.ShowDialog();
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // alacak_verecek
+            // 
+            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Name = "alacak_verecek";
+            this.Load += new System.EventHandler(this.alacak_verecek_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void alacak_verecek_Load(object sender, EventArgs e)
+        {
+            //deneme
+        }
     }
 }
