@@ -58,9 +58,19 @@ namespace gür_market
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ana_sayfa ana_sayfa = new ana_sayfa();
-            this.Hide();
-            ana_sayfa.Show();
+            
+            var kullaniciAdi = "admin";
+            var sifre = "hello";
+            if (kullaniciAdi == textBox1.Text.ToString() && sifre == txtparola.Text.ToString())
+            {
+                ana_sayfa ana_sayfa = new ana_sayfa();
+                this.Hide();
+                ana_sayfa.Show();
+            }
+            else
+            {
+                MessageBox.Show("Hatalı giris!");
+            }
         }
 
         private void txtparola_TextChanged(object sender, EventArgs e)
@@ -68,11 +78,17 @@ namespace gür_market
 
         }
 
-        private void sifremi_unuttum_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           sifre_değisimi sifre_değisimi = new sifre_değisimi();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            sifre_degisimi sifre_degisimi = new sifre_degisimi();
             this.Hide();
-            sifre_değisimi.ShowDialog();
+            sifre_degisimi.ShowDialog();
         }
     }
 }
+

@@ -29,7 +29,10 @@ namespace gür_market
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.temizle = new System.Windows.Forms.Button();
             this.güncelle = new System.Windows.Forms.Button();
             this.ekleme = new System.Windows.Forms.Button();
@@ -46,10 +49,22 @@ namespace gür_market
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.urunAlsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gurMarketDBDataSet2 = new gür_market.gurMarketDBDataSet2();
+            this.urunAlsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.urunAlsTableAdapter = new gür_market.gurMarketDBDataSet2TableAdapters.UrunAlsTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ırsaliyeNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tedarikciAdiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barkodNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunAdiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birimAdediDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birimFiyatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urunAlsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urunAlsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -75,6 +90,23 @@ namespace gür_market
             this.groupBox1.Size = new System.Drawing.Size(706, 313);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox6.Location = new System.Drawing.Point(254, 206);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(202, 22);
+            this.textBox6.TabIndex = 48;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Location = new System.Drawing.Point(103, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(123, 23);
+            this.label7.TabIndex = 47;
+            this.label7.Text = "İrsaliye no :";
             // 
             // temizle
             // 
@@ -109,6 +141,7 @@ namespace gür_market
             this.ekleme.TabIndex = 44;
             this.ekleme.Text = "EKLE";
             this.ekleme.UseVisualStyleBackColor = true;
+            this.ekleme.Click += new System.EventHandler(this.ekleme_Click);
             // 
             // textBox5
             // 
@@ -220,7 +253,17 @@ namespace gür_market
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.ırsaliyeNoDataGridViewTextBoxColumn,
+            this.tedarikciAdiDataGridViewTextBoxColumn,
+            this.barkodNoDataGridViewTextBoxColumn,
+            this.urunAdiDataGridViewTextBoxColumn,
+            this.birimAdediDataGridViewTextBoxColumn,
+            this.birimFiyatDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.urunAlsBindingSource1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 391);
             this.dataGridView1.Name = "dataGridView1";
@@ -229,22 +272,81 @@ namespace gür_market
             this.dataGridView1.Size = new System.Drawing.Size(801, 256);
             this.dataGridView1.TabIndex = 26;
             // 
-            // textBox6
+            // urunAlsBindingSource1
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox6.Location = new System.Drawing.Point(254, 206);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(202, 22);
-            this.textBox6.TabIndex = 48;
+            this.urunAlsBindingSource1.DataMember = "UrunAls";
+            this.urunAlsBindingSource1.DataSource = this.gurMarketDBDataSet2;
             // 
-            // label7
+            // gurMarketDBDataSet2
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(103, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 23);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "İrsaliye no :";
+            this.gurMarketDBDataSet2.DataSetName = "gurMarketDBDataSet2";
+            this.gurMarketDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // urunAlsBindingSource
+            // 
+            this.urunAlsBindingSource.DataMember = "UrunAls";
+            this.urunAlsBindingSource.DataSource = this.gurMarketDBDataSet2;
+            // 
+            // urunAlsTableAdapter
+            // 
+            this.urunAlsTableAdapter.ClearBeforeFill = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "UrunAlisID";
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 40;
+            // 
+            // ırsaliyeNoDataGridViewTextBoxColumn
+            // 
+            this.ırsaliyeNoDataGridViewTextBoxColumn.DataPropertyName = "IrsaliyeNo";
+            this.ırsaliyeNoDataGridViewTextBoxColumn.HeaderText = "IrsaliyeNo";
+            this.ırsaliyeNoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ırsaliyeNoDataGridViewTextBoxColumn.Name = "ırsaliyeNoDataGridViewTextBoxColumn";
+            this.ırsaliyeNoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tedarikciAdiDataGridViewTextBoxColumn
+            // 
+            this.tedarikciAdiDataGridViewTextBoxColumn.DataPropertyName = "TedarikciAdi";
+            this.tedarikciAdiDataGridViewTextBoxColumn.HeaderText = "TedarikciAdi";
+            this.tedarikciAdiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tedarikciAdiDataGridViewTextBoxColumn.Name = "tedarikciAdiDataGridViewTextBoxColumn";
+            this.tedarikciAdiDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // barkodNoDataGridViewTextBoxColumn
+            // 
+            this.barkodNoDataGridViewTextBoxColumn.DataPropertyName = "BarkodNo";
+            this.barkodNoDataGridViewTextBoxColumn.HeaderText = "BarkodNo";
+            this.barkodNoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.barkodNoDataGridViewTextBoxColumn.Name = "barkodNoDataGridViewTextBoxColumn";
+            this.barkodNoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // urunAdiDataGridViewTextBoxColumn
+            // 
+            this.urunAdiDataGridViewTextBoxColumn.DataPropertyName = "UrunAdi";
+            this.urunAdiDataGridViewTextBoxColumn.HeaderText = "UrunAdi";
+            this.urunAdiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.urunAdiDataGridViewTextBoxColumn.Name = "urunAdiDataGridViewTextBoxColumn";
+            this.urunAdiDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // birimAdediDataGridViewTextBoxColumn
+            // 
+            this.birimAdediDataGridViewTextBoxColumn.DataPropertyName = "BirimAdedi";
+            this.birimAdediDataGridViewTextBoxColumn.HeaderText = "BirimAdedi";
+            this.birimAdediDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.birimAdediDataGridViewTextBoxColumn.Name = "birimAdediDataGridViewTextBoxColumn";
+            this.birimAdediDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // birimFiyatDataGridViewTextBoxColumn
+            // 
+            this.birimFiyatDataGridViewTextBoxColumn.DataPropertyName = "BirimFiyat";
+            this.birimFiyatDataGridViewTextBoxColumn.HeaderText = "BirimFiyat";
+            this.birimFiyatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.birimFiyatDataGridViewTextBoxColumn.Name = "birimFiyatDataGridViewTextBoxColumn";
+            this.birimFiyatDataGridViewTextBoxColumn.Width = 125;
             // 
             // urunAlis
             // 
@@ -260,9 +362,13 @@ namespace gür_market
             this.Name = "urunAlis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "urunAlis";
+            this.Load += new System.EventHandler(this.urunAlis_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urunAlsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urunAlsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +395,17 @@ namespace gür_market
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label7;
+        private gurMarketDBDataSet2 gurMarketDBDataSet2;
+        private System.Windows.Forms.BindingSource urunAlsBindingSource;
+        private gurMarketDBDataSet2TableAdapters.UrunAlsTableAdapter urunAlsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ıDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource urunAlsBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ırsaliyeNoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tedarikciAdiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barkodNoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urunAdiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birimAdediDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birimFiyatDataGridViewTextBoxColumn;
     }
 }

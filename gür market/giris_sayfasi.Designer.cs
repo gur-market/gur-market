@@ -43,7 +43,7 @@ namespace gür_market
             this.label2 = new System.Windows.Forms.Label();
             this.txtparola = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.sifremi_unuttum = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +123,7 @@ namespace gür_market
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(196, 15);
             this.textBox1.TabIndex = 6;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -137,7 +138,7 @@ namespace gür_market
             // 
             this.button2.BackgroundImage = global::gür_market.Properties.Resources.ip;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(79, 186);
+            this.button2.Location = new System.Drawing.Point(120, 195);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(74, 35);
             this.button2.TabIndex = 8;
@@ -149,7 +150,7 @@ namespace gür_market
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Image = global::gür_market.Properties.Resources.ip;
-            this.button3.Location = new System.Drawing.Point(256, 186);
+            this.button3.Location = new System.Drawing.Point(242, 195);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(74, 35);
             this.button3.TabIndex = 9;
@@ -204,17 +205,17 @@ namespace gür_market
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // sifremi_unuttum
+            // button4
             // 
-            this.sifremi_unuttum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sifremi_unuttum.Image = global::gür_market.Properties.Resources.ip;
-            this.sifremi_unuttum.Location = new System.Drawing.Point(146, 227);
-            this.sifremi_unuttum.Name = "sifremi_unuttum";
-            this.sifremi_unuttum.Size = new System.Drawing.Size(126, 35);
-            this.sifremi_unuttum.TabIndex = 12;
-            this.sifremi_unuttum.Text = "şifremi unuttum";
-            this.sifremi_unuttum.UseVisualStyleBackColor = true;
-            this.sifremi_unuttum.Click += new System.EventHandler(this.sifremi_unuttum_Click);
+            this.button4.BackgroundImage = global::gür_market.Properties.Resources.ip;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Location = new System.Drawing.Point(133, 236);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(177, 35);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Sifremi Unuttum";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // giris_sayfasi
             // 
@@ -223,7 +224,7 @@ namespace gür_market
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackgroundImage = global::gür_market.Properties.Resources.form;
             this.ClientSize = new System.Drawing.Size(434, 282);
-            this.Controls.Add(this.sifremi_unuttum);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button3);
@@ -265,7 +266,7 @@ namespace gür_market
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtparola;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button sifremi_unuttum;
+        private System.Windows.Forms.Button button4;
     }
 }
 

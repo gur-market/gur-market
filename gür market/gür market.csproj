@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -35,6 +36,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -43,18 +50,6 @@
     </Reference>
     <Reference Include="Microsoft.Data.SqlClient, Version=1.13.20136.2, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.SqlClient.1.1.3\lib\net46\Microsoft.Data.SqlClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.10\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.10\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.3.1.10\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.EntityFrameworkCore.SqlServer, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.SqlServer.3.1.10\lib\netstandard2.0\Microsoft.EntityFrameworkCore.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.10.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.10\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
@@ -144,6 +139,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -170,11 +167,43 @@
     <Compile Include="alacak_verecek.Designer.cs">
       <DependentUpon>alacak_verecek.cs</DependentUpon>
     </Compile>
+    <Compile Include="Context\DataInitializer.cs" />
+    <Compile Include="Context\GurMarContext.cs" />
     <Compile Include="giris_sayfasi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="giris_sayfasi.Designer.cs">
       <DependentUpon>giris_sayfasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gurMarketDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gurMarketDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gurMarketDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gurMarketDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gurMarketDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gurMarketDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gurMarketDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gurMarketDBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gurMarketDBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gurMarketDBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gurMarketDBDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gurMarketDBDataSet6.xsd</DependentUpon>
     </Compile>
     <Compile Include="guvenlik_sifresi.cs">
       <SubType>Form</SubType>
@@ -182,6 +211,15 @@
     <Compile Include="guvenlik_sifresi.Designer.cs">
       <DependentUpon>guvenlik_sifresi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101141921046_InitialCreate.cs" />
+    <Compile Include="Migrations\202101141921046_InitialCreate.designer.cs">
+      <DependentUpon>202101141921046_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101151642394_Initial.cs" />
+    <Compile Include="Migrations\202101151642394_Initial.designer.cs">
+      <DependentUpon>202101151642394_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="musteri_borc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +254,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sınıflar\Kasa.cs" />
     <Compile Include="sınıflar\Musteri.cs" />
+    <Compile Include="sınıflar\PesinSatis.cs" />
+    <Compile Include="sınıflar\Stok.cs" />
+    <Compile Include="sınıflar\Tedarikci.cs" />
+    <Compile Include="sınıflar\UrunAl.cs" />
+    <Compile Include="sınıflar\VeresiyeSatis.cs" />
     <Compile Include="tedarikci_borc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,11 +289,11 @@
     <Compile Include="veresiyeSatis.Designer.cs">
       <DependentUpon>veresiyeSatis.cs</DependentUpon>
     </Compile>
-    <Compile Include="sifre_değisimi.cs">
+    <Compile Include="sifre_degisimi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sifre_değisimi.Designer.cs">
-      <DependentUpon>sifre_değisimi.cs</DependentUpon>
+    <Compile Include="sifre_degisimi.Designer.cs">
+      <DependentUpon>sifre_degisimi.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="alacak_verecek.resx">
       <DependentUpon>alacak_verecek.cs</DependentUpon>
@@ -263,6 +306,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="guvenlik_sifresi.resx">
       <DependentUpon>guvenlik_sifresi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141921046_InitialCreate.resx">
+      <DependentUpon>202101141921046_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101151642394_Initial.resx">
+      <DependentUpon>202101151642394_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="musteri_borc.resx">
       <DependentUpon>musteri_borc.cs</DependentUpon>
@@ -304,9 +353,78 @@
     <EmbeddedResource Include="veresiyeSatis.resx">
       <DependentUpon>veresiyeSatis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sifre_değisimi.resx">
-      <DependentUpon>sifre_değisimi.cs</DependentUpon>
+    <EmbeddedResource Include="sifre_degisimi.resx">
+      <DependentUpon>sifre_degisimi.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="gurMarketDBDataSet.xsc">
+      <DependentUpon>gurMarketDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="gurMarketDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gurMarketDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gurMarketDBDataSet.xss">
+      <DependentUpon>gurMarketDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="gurMarketDBDataSet1.xsc">
+      <DependentUpon>gurMarketDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="gurMarketDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gurMarketDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gurMarketDBDataSet1.xss">
+      <DependentUpon>gurMarketDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="gurMarketDBDataSet2.xsc">
+      <DependentUpon>gurMarketDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="gurMarketDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gurMarketDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gurMarketDBDataSet2.xss">
+      <DependentUpon>gurMarketDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="gurMarketDBDataSet3.xsc">
+      <DependentUpon>gurMarketDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="gurMarketDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gurMarketDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gurMarketDBDataSet3.xss">
+      <DependentUpon>gurMarketDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="gurMarketDBDataSet4.xsc">
+      <DependentUpon>gurMarketDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="gurMarketDBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gurMarketDBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gurMarketDBDataSet4.xss">
+      <DependentUpon>gurMarketDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="gurMarketDBDataSet6.xsc">
+      <DependentUpon>gurMarketDBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="gurMarketDBDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gurMarketDBDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gurMarketDBDataSet6.xss">
+      <DependentUpon>gurMarketDBDataSet6.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -354,13 +472,18 @@
   <ItemGroup>
     <None Include="Resources\glassy_buton.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
 </Project>

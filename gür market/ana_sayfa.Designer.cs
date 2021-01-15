@@ -36,7 +36,7 @@ namespace gür_market
             this.satis = new System.Windows.Forms.Button();
             this.stok = new System.Windows.Forms.Button();
             this.müsteri = new System.Windows.Forms.Button();
-            this.sifre_degistir = new System.Windows.Forms.Button();
+            this.yoneticiEkle = new System.Windows.Forms.Button();
             this.urunler = new System.Windows.Forms.Button();
             this.kasa = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -116,22 +116,22 @@ namespace gür_market
             this.müsteri.UseVisualStyleBackColor = false;
             this.müsteri.Click += new System.EventHandler(this.müsteri_Click);
             // 
-            // sifre_degistir
+            // yoneticiEkle
             // 
-            this.sifre_degistir.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.sifre_degistir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sifre_degistir.Font = new System.Drawing.Font("Perpetua", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sifre_degistir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.sifre_degistir.ImageIndex = 5;
-            this.sifre_degistir.ImageList = this.ımageList1;
-            this.sifre_degistir.Location = new System.Drawing.Point(497, 256);
-            this.sifre_degistir.Name = "sifre_degistir";
-            this.sifre_degistir.Size = new System.Drawing.Size(166, 98);
-            this.sifre_degistir.TabIndex = 4;
-            this.sifre_degistir.Text = "Şifre değiştirme";
-            this.sifre_degistir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.sifre_degistir.UseVisualStyleBackColor = false;
-            this.sifre_degistir.Click += new System.EventHandler(this.button5_Click);
+            this.yoneticiEkle.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.yoneticiEkle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.yoneticiEkle.Font = new System.Drawing.Font("Perpetua", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yoneticiEkle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.yoneticiEkle.ImageIndex = 5;
+            this.yoneticiEkle.ImageList = this.ımageList1;
+            this.yoneticiEkle.Location = new System.Drawing.Point(497, 256);
+            this.yoneticiEkle.Name = "yoneticiEkle";
+            this.yoneticiEkle.Size = new System.Drawing.Size(166, 98);
+            this.yoneticiEkle.TabIndex = 4;
+            this.yoneticiEkle.Text = "sifre degistirme";
+            this.yoneticiEkle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.yoneticiEkle.UseVisualStyleBackColor = false;
+            this.yoneticiEkle.Click += new System.EventHandler(this.button5_Click);
             // 
             // urunler
             // 
@@ -175,7 +175,7 @@ namespace gür_market
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.kasa);
             this.Controls.Add(this.urunler);
-            this.Controls.Add(this.sifre_degistir);
+            this.Controls.Add(this.yoneticiEkle);
             this.Controls.Add(this.müsteri);
             this.Controls.Add(this.stok);
             this.Controls.Add(this.satis);
@@ -183,7 +183,6 @@ namespace gür_market
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ana_sayfa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.ana_sayfa_Load);
             this.ResumeLayout(false);
 
         }
@@ -195,7 +194,7 @@ namespace gür_market
         private System.Windows.Forms.Button satis;
         private System.Windows.Forms.Button stok;
         private System.Windows.Forms.Button müsteri;
-        private System.Windows.Forms.Button sifre_degistir;
+        private System.Windows.Forms.Button yoneticiEkle;
         private System.Windows.Forms.Button urunler;
         private System.Windows.Forms.Button kasa;
     }

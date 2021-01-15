@@ -29,16 +29,29 @@ namespace gür_market
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.arama = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.stoksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gurMarketDBDataSet6 = new gür_market.gurMarketDBDataSet6();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.stoksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.stoksTableAdapter = new gür_market.gurMarketDBDataSet6TableAdapters.StoksTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barkodNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urunAdiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birimAdediDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birimFiyatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stoksBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stoksBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -77,6 +90,15 @@ namespace gür_market
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stokda Bulunan Malzemeler";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox1.Location = new System.Drawing.Point(239, 51);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(138, 30);
+            this.textBox1.TabIndex = 19;
             // 
             // arama
             // 
@@ -88,11 +110,20 @@ namespace gür_market
             this.arama.TabIndex = 18;
             this.arama.Text = "Arama";
             this.arama.UseVisualStyleBackColor = true;
+            this.arama.Click += new System.EventHandler(this.arama_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.barkodNoDataGridViewTextBoxColumn,
+            this.urunAdiDataGridViewTextBoxColumn,
+            this.birimAdediDataGridViewTextBoxColumn,
+            this.birimFiyatDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.stoksBindingSource1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(3, 114);
             this.dataGridView1.Name = "dataGridView1";
@@ -101,21 +132,78 @@ namespace gür_market
             this.dataGridView1.Size = new System.Drawing.Size(607, 333);
             this.dataGridView1.TabIndex = 1;
             // 
+            // stoksBindingSource1
+            // 
+            this.stoksBindingSource1.DataMember = "Stoks";
+            this.stoksBindingSource1.DataSource = this.gurMarketDBDataSet6;
+            // 
+            // gurMarketDBDataSet6
+            // 
+            this.gurMarketDBDataSet6.DataSetName = "gurMarketDBDataSet6";
+            this.gurMarketDBDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "BARKOD NO",
+            "URUN ADI"});
             this.comboBox1.Location = new System.Drawing.Point(73, 51);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 33);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // textBox1
+            // stoksBindingSource
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(239, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 30);
-            this.textBox1.TabIndex = 19;
+            this.stoksBindingSource.DataMember = "Stoks";
+            this.stoksBindingSource.DataSource = this.gurMarketDBDataSet6;
+            // 
+            // stoksTableAdapter
+            // 
+            this.stoksTableAdapter.ClearBeforeFill = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "StokID";
+            this.Column1.HeaderText = "ID";
+            this.Column1.MaxInputLength = 32736;
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 40;
+            // 
+            // barkodNoDataGridViewTextBoxColumn
+            // 
+            this.barkodNoDataGridViewTextBoxColumn.DataPropertyName = "BarkodNo";
+            this.barkodNoDataGridViewTextBoxColumn.HeaderText = "BarkodNo";
+            this.barkodNoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.barkodNoDataGridViewTextBoxColumn.Name = "barkodNoDataGridViewTextBoxColumn";
+            this.barkodNoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // urunAdiDataGridViewTextBoxColumn
+            // 
+            this.urunAdiDataGridViewTextBoxColumn.DataPropertyName = "UrunAdi";
+            this.urunAdiDataGridViewTextBoxColumn.HeaderText = "UrunAdi";
+            this.urunAdiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.urunAdiDataGridViewTextBoxColumn.Name = "urunAdiDataGridViewTextBoxColumn";
+            this.urunAdiDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // birimAdediDataGridViewTextBoxColumn
+            // 
+            this.birimAdediDataGridViewTextBoxColumn.DataPropertyName = "BirimAdedi";
+            this.birimAdediDataGridViewTextBoxColumn.HeaderText = "BirimAdedi";
+            this.birimAdediDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.birimAdediDataGridViewTextBoxColumn.Name = "birimAdediDataGridViewTextBoxColumn";
+            this.birimAdediDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // birimFiyatDataGridViewTextBoxColumn
+            // 
+            this.birimFiyatDataGridViewTextBoxColumn.DataPropertyName = "BirimFiyat";
+            this.birimFiyatDataGridViewTextBoxColumn.HeaderText = "BirimFiyat";
+            this.birimFiyatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.birimFiyatDataGridViewTextBoxColumn.Name = "birimFiyatDataGridViewTextBoxColumn";
+            this.birimFiyatDataGridViewTextBoxColumn.Width = 125;
             // 
             // urunStokları
             // 
@@ -130,9 +218,13 @@ namespace gür_market
             this.Name = "urunStokları";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "urunStokları";
+            this.Load += new System.EventHandler(this.urunStokları_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stoksBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stoksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +240,15 @@ namespace gür_market
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button arama;
         private System.Windows.Forms.TextBox textBox1;
+        private gurMarketDBDataSet6 gurMarketDBDataSet6;
+        private System.Windows.Forms.BindingSource stoksBindingSource;
+        private gurMarketDBDataSet6TableAdapters.StoksTableAdapter stoksTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ıDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource stoksBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barkodNoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urunAdiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birimAdediDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birimFiyatDataGridViewTextBoxColumn;
     }
 }

@@ -29,22 +29,28 @@ namespace gür_market
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.temizle = new System.Windows.Forms.Button();
             this.güncelle = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.gurMarketDBDataSet1 = new gür_market.gurMarketDBDataSet1();
+            this.musterisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.musterisTableAdapter = new gür_market.gurMarketDBDataSet1TableAdapters.MusterisTableAdapter();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musterisBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -80,6 +86,13 @@ namespace gür_market
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Müşteri Bilgisi";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(194, 103);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
+            this.dateTimePicker1.TabIndex = 53;
+            // 
             // temizle
             // 
             this.temizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -103,6 +116,7 @@ namespace gür_market
             this.güncelle.TabIndex = 51;
             this.güncelle.Text = "Güncelle";
             this.güncelle.UseVisualStyleBackColor = true;
+            this.güncelle.Click += new System.EventHandler(this.güncelle_Click);
             // 
             // textBox5
             // 
@@ -138,16 +152,6 @@ namespace gür_market
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(202, 30);
             this.textBox2.TabIndex = 46;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(194, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 30);
-            this.textBox1.TabIndex = 45;
             // 
             // label5
             // 
@@ -198,12 +202,34 @@ namespace gür_market
             this.label1.TabIndex = 27;
             this.label1.Text = "BORÇ GÜNCELLEME";
             // 
-            // dateTimePicker1
+            // textBox1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(194, 103);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
-            this.dateTimePicker1.TabIndex = 53;
+            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.musterisBindingSource, "MusteriTc", true));
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.musterisBindingSource, "MusteriTc", true));
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.Location = new System.Drawing.Point(194, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.textBox1.Size = new System.Drawing.Size(202, 30);
+            this.textBox1.TabIndex = 45;
+            this.textBox1.Tag = "ahmet";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // gurMarketDBDataSet1
+            // 
+            this.gurMarketDBDataSet1.DataSetName = "gurMarketDBDataSet1";
+            this.gurMarketDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // musterisBindingSource
+            // 
+            this.musterisBindingSource.DataMember = "Musteris";
+            this.musterisBindingSource.DataSource = this.gurMarketDBDataSet1;
+            // 
+            // musterisTableAdapter
+            // 
+            this.musterisTableAdapter.ClearBeforeFill = true;
             // 
             // musteri_borc_guncelleme
             // 
@@ -218,8 +244,11 @@ namespace gür_market
             this.Name = "musteri_borc_guncelleme";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "musteri_borc_guncelleme";
+            this.Load += new System.EventHandler(this.musteri_borc_guncelleme_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musterisBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +271,8 @@ namespace gür_market
         private System.Windows.Forms.Button güncelle;
         private System.Windows.Forms.Button temizle;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private gurMarketDBDataSet1 gurMarketDBDataSet1;
+        private System.Windows.Forms.BindingSource musterisBindingSource;
+        private gurMarketDBDataSet1TableAdapters.MusterisTableAdapter musterisTableAdapter;
     }
 }

@@ -29,7 +29,9 @@ namespace gür_market
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.temizle = new System.Windows.Forms.Button();
             this.musteri_silme = new System.Windows.Forms.Button();
             this.güncelle = new System.Windows.Forms.Button();
@@ -47,9 +49,27 @@ namespace gür_market
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.musterisBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gurMarketDBDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gurMarketDBDataSet1 = new gür_market.gurMarketDBDataSet1();
+            this.musterisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gurMarketDBDataSet = new gür_market.gurMarketDBDataSet();
+            this.gurMarketDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.musterisTableAdapter = new gür_market.gurMarketDBDataSet1TableAdapters.MusterisTableAdapter();
+            this.musteriIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.musteriAdSoyadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.musteriTcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.musteriTelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tarihSaatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borcMiktariDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musterisBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musterisBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -77,6 +97,15 @@ namespace gür_market
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Müşteri Bilgi Paneli";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Info;
+            this.dateTimePicker1.Location = new System.Drawing.Point(250, 210);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
+            this.dateTimePicker1.TabIndex = 49;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // temizle
             // 
@@ -228,7 +257,7 @@ namespace gür_market
             // button1
             // 
             this.button1.Image = global::gür_market.Properties.Resources.a__1_;
-            this.button1.Location = new System.Drawing.Point(748, 12);
+            this.button1.Location = new System.Drawing.Point(687, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(44, 45);
             this.button1.TabIndex = 24;
@@ -237,31 +266,115 @@ namespace gür_market
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.musteriIdDataGridViewTextBoxColumn,
+            this.musteriAdSoyadDataGridViewTextBoxColumn,
+            this.musteriTcDataGridViewTextBoxColumn,
+            this.musteriTelDataGridViewTextBoxColumn,
+            this.tarihSaatDataGridViewTextBoxColumn,
+            this.borcMiktariDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.musterisBindingSource1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 446);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(804, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(743, 150);
             this.dataGridView1.TabIndex = 25;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // dateTimePicker1
+            // musterisBindingSource1
             // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Info;
-            this.dateTimePicker1.Location = new System.Drawing.Point(250, 210);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
-            this.dateTimePicker1.TabIndex = 49;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.musterisBindingSource1.DataMember = "Musteris";
+            this.musterisBindingSource1.DataSource = this.gurMarketDBDataSet1BindingSource;
+            // 
+            // gurMarketDBDataSet1BindingSource
+            // 
+            this.gurMarketDBDataSet1BindingSource.DataSource = this.gurMarketDBDataSet1;
+            this.gurMarketDBDataSet1BindingSource.Position = 0;
+            // 
+            // gurMarketDBDataSet1
+            // 
+            this.gurMarketDBDataSet1.DataSetName = "gurMarketDBDataSet1";
+            this.gurMarketDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // musterisBindingSource
+            // 
+            this.musterisBindingSource.DataMember = "Musteris";
+            this.musterisBindingSource.DataSource = this.gurMarketDBDataSet1;
+            // 
+            // gurMarketDBDataSet
+            // 
+            this.gurMarketDBDataSet.DataSetName = "gurMarketDBDataSet";
+            this.gurMarketDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gurMarketDBDataSetBindingSource
+            // 
+            this.gurMarketDBDataSetBindingSource.DataSource = this.gurMarketDBDataSet;
+            this.gurMarketDBDataSetBindingSource.Position = 0;
+            // 
+            // musterisTableAdapter
+            // 
+            this.musterisTableAdapter.ClearBeforeFill = true;
+            // 
+            // musteriIdDataGridViewTextBoxColumn
+            // 
+            this.musteriIdDataGridViewTextBoxColumn.DataPropertyName = "MusteriId";
+            this.musteriIdDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.musteriIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.musteriIdDataGridViewTextBoxColumn.Name = "musteriIdDataGridViewTextBoxColumn";
+            this.musteriIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.musteriIdDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // musteriAdSoyadDataGridViewTextBoxColumn
+            // 
+            this.musteriAdSoyadDataGridViewTextBoxColumn.DataPropertyName = "MusteriAdSoyad";
+            this.musteriAdSoyadDataGridViewTextBoxColumn.HeaderText = "MusteriAdSoyad";
+            this.musteriAdSoyadDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.musteriAdSoyadDataGridViewTextBoxColumn.Name = "musteriAdSoyadDataGridViewTextBoxColumn";
+            this.musteriAdSoyadDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // musteriTcDataGridViewTextBoxColumn
+            // 
+            this.musteriTcDataGridViewTextBoxColumn.DataPropertyName = "MusteriTc";
+            this.musteriTcDataGridViewTextBoxColumn.HeaderText = "MusteriTc";
+            this.musteriTcDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.musteriTcDataGridViewTextBoxColumn.Name = "musteriTcDataGridViewTextBoxColumn";
+            this.musteriTcDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // musteriTelDataGridViewTextBoxColumn
+            // 
+            this.musteriTelDataGridViewTextBoxColumn.DataPropertyName = "MusteriTel";
+            this.musteriTelDataGridViewTextBoxColumn.HeaderText = "MusteriTel";
+            this.musteriTelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.musteriTelDataGridViewTextBoxColumn.Name = "musteriTelDataGridViewTextBoxColumn";
+            this.musteriTelDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tarihSaatDataGridViewTextBoxColumn
+            // 
+            this.tarihSaatDataGridViewTextBoxColumn.DataPropertyName = "TarihSaat";
+            this.tarihSaatDataGridViewTextBoxColumn.HeaderText = "TarihSaat";
+            this.tarihSaatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tarihSaatDataGridViewTextBoxColumn.Name = "tarihSaatDataGridViewTextBoxColumn";
+            this.tarihSaatDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // borcMiktariDataGridViewTextBoxColumn
+            // 
+            this.borcMiktariDataGridViewTextBoxColumn.DataPropertyName = "BorcMiktari";
+            this.borcMiktariDataGridViewTextBoxColumn.HeaderText = "BorcMiktari";
+            this.borcMiktariDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.borcMiktariDataGridViewTextBoxColumn.Name = "borcMiktariDataGridViewTextBoxColumn";
+            this.borcMiktariDataGridViewTextBoxColumn.Width = 125;
             // 
             // musteri_borc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::gür_market.Properties.Resources.form;
-            this.ClientSize = new System.Drawing.Size(804, 596);
+            this.ClientSize = new System.Drawing.Size(743, 596);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -270,9 +383,16 @@ namespace gür_market
             this.Name = "musteri_borc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "musteri_borc";
+            this.Load += new System.EventHandler(this.musteri_borc_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musterisBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musterisBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +419,18 @@ namespace gür_market
         private System.Windows.Forms.Button temizle;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.BindingSource gurMarketDBDataSetBindingSource;
+        private gurMarketDBDataSet gurMarketDBDataSet;
+        private gurMarketDBDataSet1 gurMarketDBDataSet1;
+        private System.Windows.Forms.BindingSource musterisBindingSource;
+        private gurMarketDBDataSet1TableAdapters.MusterisTableAdapter musterisTableAdapter;
+        private System.Windows.Forms.BindingSource musterisBindingSource1;
+        private System.Windows.Forms.BindingSource gurMarketDBDataSet1BindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn musteriIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn musteriAdSoyadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn musteriTcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn musteriTelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tarihSaatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borcMiktariDataGridViewTextBoxColumn;
     }
 }

@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using gür_market.sınıflar;
+using gür_market.Context;
 
 namespace gür_market
 {
     public partial class ana_sayfa : Form
     {
+        GurMarContext db = new GurMarContext();
+
         public ana_sayfa()
         {
             InitializeComponent();
@@ -25,7 +29,7 @@ namespace gür_market
 
         private void button5_Click(object sender, EventArgs e)
         {
-            sifre_değisimi yonetici_ekleme = new sifre_değisimi();
+            sifre_degisimi yonetici_ekleme = new sifre_degisimi();
             yonetici_ekleme.ShowDialog();
         }
 
@@ -57,11 +61,9 @@ namespace gür_market
         {
             parasal_durum parasal_durum = new parasal_durum();
             parasal_durum.ShowDialog();
-        }
-
-        private void ana_sayfa_Load(object sender, EventArgs e)
-        {
-
+            Kasa top = new Kasa();
+            top.PotansiyelKarZarar = top.MevcutKasaMiktari + top.ToplamAlacakMiktari - top.ToplamBorc;
+           // parasal_durum.textBox1 = 
         }
     }
 }

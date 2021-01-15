@@ -29,6 +29,7 @@ namespace gür_market
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.borç = new System.Windows.Forms.Label();
@@ -39,6 +40,11 @@ namespace gür_market
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.gurMarketDBDataSet3 = new gür_market.gurMarketDBDataSet3();
+            this.kasasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kasasTableAdapter = new gür_market.gurMarketDBDataSet3TableAdapters.KasasTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kasasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -99,37 +105,53 @@ namespace gür_market
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.kasasBindingSource, "ToplamBorc", true));
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kasasBindingSource, "ToplamBorc", true));
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(357, 124);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.textBox1.Location = new System.Drawing.Point(357, 115);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 22);
+            this.textBox1.Size = new System.Drawing.Size(146, 30);
             this.textBox1.TabIndex = 22;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kasasBindingSource, "ToplamAlacakMiktari", true));
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(357, 180);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox2.Location = new System.Drawing.Point(357, 171);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 22);
+            this.textBox2.Size = new System.Drawing.Size(146, 30);
             this.textBox2.TabIndex = 23;
             // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kasasBindingSource, "MevcutKasaMiktari", true));
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(357, 290);
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox3.Location = new System.Drawing.Point(357, 281);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 22);
+            this.textBox3.Size = new System.Drawing.Size(146, 30);
             this.textBox3.TabIndex = 24;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kasasBindingSource, "PotansiyelKarZarar", true));
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(357, 235);
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox5.Location = new System.Drawing.Point(357, 226);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(146, 22);
+            this.textBox5.Size = new System.Drawing.Size(146, 30);
             this.textBox5.TabIndex = 27;
             // 
             // label3
@@ -142,6 +164,20 @@ namespace gür_market
             this.label3.Size = new System.Drawing.Size(201, 25);
             this.label3.TabIndex = 25;
             this.label3.Text = "Potansiyel Kar/Zarar :";
+            // 
+            // gurMarketDBDataSet3
+            // 
+            this.gurMarketDBDataSet3.DataSetName = "gurMarketDBDataSet3";
+            this.gurMarketDBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kasasBindingSource
+            // 
+            this.kasasBindingSource.DataMember = "Kasas";
+            this.kasasBindingSource.DataSource = this.gurMarketDBDataSet3;
+            // 
+            // kasasTableAdapter
+            // 
+            this.kasasTableAdapter.ClearBeforeFill = true;
             // 
             // parasal_durum
             // 
@@ -163,6 +199,9 @@ namespace gür_market
             this.Name = "parasal_durum";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "parasal_durum";
+            this.Load += new System.EventHandler(this.parasal_durum_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gurMarketDBDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kasasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +219,8 @@ namespace gür_market
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label3;
+        private gurMarketDBDataSet3 gurMarketDBDataSet3;
+        private System.Windows.Forms.BindingSource kasasBindingSource;
+        private gurMarketDBDataSet3TableAdapters.KasasTableAdapter kasasTableAdapter;
     }
 }

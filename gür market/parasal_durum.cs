@@ -21,5 +21,22 @@ namespace gür_market
         {
             this.Hide();
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void parasal_durum_Load(object sender, EventArgs e)
+        {
+            // TODO: Bu kod satırı 'gurMarketDBDataSet3.Kasas' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.kasasTableAdapter.Fill(this.gurMarketDBDataSet3.Kasas);
+
+        }
     }
 }

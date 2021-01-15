@@ -21,5 +21,27 @@ namespace gür_market
         {
             this.Close();
         }
+
+        private void urunStokları_Load(object sender, EventArgs e)
+        {
+            // TODO: Bu kod satırı 'gurMarketDBDataSet6.Stoks' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.stoksTableAdapter.Fill(this.gurMarketDBDataSet6.Stoks);
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void arama_Click(object sender, EventArgs e)
+        {
+        
+        }
     }
 }

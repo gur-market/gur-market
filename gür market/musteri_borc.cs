@@ -41,5 +41,17 @@ namespace gür_market
         {
 
         }
+
+        private void musteri_borc_Load(object sender, EventArgs e)
+        {
+            // TODO: Bu kod satırı 'gurMarketDBDataSet1.Musteris' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.musterisTableAdapter.Fill(this.gurMarketDBDataSet1.Musteris);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
